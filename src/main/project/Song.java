@@ -2,7 +2,7 @@ package project;
 
 import java.util.HashMap;
 import java.util.Map;
-import prj5.SongInterface;
+import project.SongInterface;
 
 public class Song implements SongInterface{
     private String title;
