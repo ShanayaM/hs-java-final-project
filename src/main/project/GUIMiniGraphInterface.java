@@ -11,7 +11,7 @@ import CS2114.Shape;
  * package default interface used by View.addGlyph method so we can
  * add Glyph and Legend in a similar fashion
  *
- * 
+ *
  */
 interface GUIMiniGraph {
     public Shape[] getGlyph();
