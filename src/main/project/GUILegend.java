@@ -13,7 +13,7 @@ import project.SongInterface;
 
 /**
  *
- * 
+ *
  */
 public class GUILegend implements GUIMiniGraph{
     private TextShape legend = new TextShape(5, 5, "");
