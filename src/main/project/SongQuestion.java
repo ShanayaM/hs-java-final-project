@@ -5,14 +5,11 @@
  */
 package project;
 
-import project.SongInterface;
-import project.SongQuestionInterface;
-
 /**
  *
  * 
  */
-public class SongQuestion implements SongQuestionInterface {
+public final class SongQuestion implements SongQuestionInterface {
     private SongInterface song;
     private String haveYouHeardTheSong;
     private String doYouLikeTheSong;
@@ -27,12 +24,12 @@ public class SongQuestion implements SongQuestionInterface {
 
 
     /**
-     * @param song
+     * @param s
      *            the song to set
      */
     @Override
-    public void setSong(SongInterface song) {
-        this.song = song;
+    public void setSong(final SongInterface s) {
+        this.song = s;
     }
 
 
@@ -46,12 +43,12 @@ public class SongQuestion implements SongQuestionInterface {
 
 
     /**
-     * @param haveYouHeardTheSong
+     * @param heardSong
      *            the haveYouHeardTheSong to set
      */
     @Override
-    public void setHaveYouHeardTheSong(String haveYouHeardTheSong) {
-        this.haveYouHeardTheSong = haveYouHeardTheSong;
+    public void setHaveYouHeardTheSong(final String heardSong) {
+        this.haveYouHeardTheSong = heardSong;
     }
 
 
@@ -65,13 +62,11 @@ public class SongQuestion implements SongQuestionInterface {
 
 
     /**
-     * @param doYouLikeTheSong
+     * @param likeSong
      *            the doYouLikeTheSong to set
      */
     @Override
-    public void setDoYouLikeTheSong(String doYouLikeTheSong) {
-        this.doYouLikeTheSong = doYouLikeTheSong;
-    }
-
-    
+    public void setDoYouLikeTheSong(final String likeSong) {
+        this.doYouLikeTheSong = likeSong;
+    }    
 }
