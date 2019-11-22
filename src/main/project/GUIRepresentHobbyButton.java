@@ -9,19 +9,18 @@ import CS2114.Command;
 import CS2114.Widget;
 import project.MusicSurveyInterface.SurveyEnum;
 import java.util.List;
-import project.GUIInterface;
 
 /**
  *
  */
-public class GUIRepresentHobyyButton extends GUIModel implements Command{
+public class GUIRepresentHobyyButton extends GUIModel implements Command {
 
-    public GUIRepresentHobyyButton(List model, GUIInterface view) {
+    public GUIRepresentHobyyButton(final List model, final GUIInterface view) {
         super(model, view);
     }
 
     @Override
     public void execute(Widget widget) {
-        view.updateModel(model, view.getPaginationIndex()-8, SurveyEnum.HOBBY);
+        view.updateModel(model, view.getPaginationIndex() - 8, SurveyEnum.HOBBY);
     }
 }
