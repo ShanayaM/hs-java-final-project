@@ -6,7 +6,9 @@
 package test;
 
 import project.SongInterface;
+import project.Song;
 import org.junit.Before;
+import static org.junit.Assert.assertEquals;
 
 /**
  *
