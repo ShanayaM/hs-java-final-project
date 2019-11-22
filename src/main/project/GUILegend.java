@@ -108,4 +108,5 @@ public final class GUILegend implements GUIMiniGraph {
         shapes[8] = likes;
 
         return shapes;
-    }}
+    }
+}
