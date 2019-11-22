@@ -12,7 +12,7 @@ import java.util.List;
 /**
  *
  */
-public class GUIPreviousButton extends GUIModel implements Command {
+public final class GUIPreviousButton extends GUIModel implements Command {
 
     public GUIPreviousButton(final List model, final GUIInterface view) {
         super(model, view);
@@ -21,7 +21,7 @@ public class GUIPreviousButton extends GUIModel implements Command {
     @Override
     public void execute(Widget widget) {
         int currentIndex = view.getPaginationIndex();
-        if(currentIndex > 8) {
+        if (currentIndex > 8) {
             if (currentIndex - 17 >= 0) {
                 view.getNextButton().enable();
                 view.getPreviousButton().enable();
