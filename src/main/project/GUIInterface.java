@@ -15,41 +15,17 @@ import java.util.List;
  */
 public interface GUIInterface {
     public int getPaginationIndex();
-
-
     public SurveyEnum getCurrentType();
-
-
     public void updateModel(List model, int index, SurveyEnum type);
-
-
     // USED BY CONTROLLER TO ADD ACTION COMMAND
     Button getNextButton();
-
-
     Button getPreviousButton();
-
-
     Button getQuitButton();
-
-
     Button getRepresentHobbyButton();
-
-
     Button getRepresentMajorButton();
-
-
     Button getRepresentRegionButton();
-
-
     Button getSortByArtistNameButton();
-
-
     Button getSortByGenreButton();
-
-
     Button getSortByReleaseYearButton();
-
-
     Button getSortBySongTitleButton();
 }
