@@ -10,21 +10,21 @@ import CS2114.Widget;
 import project.MusicSurveyInterface;
 import java.util.Comparator;
 import java.util.List;
-import project.SongInterface;
-import project.GUIInterface;
 import java.util.Iterator;
 
 /**
  *
  */
-public class GUISortByGenreButton extends GUIModel implements Command {
+public final class GUISortByGenreButton
+    extends GUIModel implements Command {
 
-    public GUISortByGenreButton(List model, GUIInterface view) {
+    public GUISortByGenreButton(final List model,
+                                final GUIInterface view) {
         super(model, view);
     }
 
     @Override
-    public void execute(Widget widget) {
+    public void execute(final Widget widget) {
         model.sort(COMPARE_BY_GENRE);
         view.updateModel(model, 0, view.getCurrentType());
         //Generate text output of the data for 2 views hobby, sorted by genre
@@ -39,7 +39,7 @@ public class GUISortByGenreButton extends GUIModel implements Command {
         }
     };
 
-    private void generateTextOutput(List model) {
+    private void generateTextOutput(final List model) {
         Iterator iterator = model.iterator();
         String br = "\n";
         StringBuilder sb = new StringBuilder();
