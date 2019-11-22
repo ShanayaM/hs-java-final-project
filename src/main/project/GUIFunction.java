@@ -3,7 +3,7 @@
  * 
  * 
  */
-package project.gui;
+package project;
 
 import project.MusicSurveyInterface.SurveyEnum;
 import java.util.List;
