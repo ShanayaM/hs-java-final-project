@@ -9,7 +9,6 @@ import CS2114.Shape;
 import CS2114.TextShape;
 import project.MusicSurveyInterface.SurveyEnum;
 import java.awt.Color;
-import project.SongInterface;
 
 /**
  *
@@ -59,19 +58,24 @@ public final class GUILegend implements GUIMiniGraph {
         }
 
         legend.setBackgroundColor(Color.WHITE);
-        legend.moveTo(legend.getX() + cont.getX(), legend.getY() + cont.getY());
+        legend.moveTo(legend.getX() + cont.getX(),
+                      legend.getY() + cont.getY());
 
         one.setBackgroundColor(Color.WHITE);
-        one.moveTo(one.getX() + cont.getX(), one.getY() + cont.getY());
+        one.moveTo(one.getX() + cont.getX(),
+                   one.getY() + cont.getY());
 
         two.setBackgroundColor(Color.WHITE);
-        two.moveTo(two.getX() + cont.getX(), two.getY() + cont.getY());
+        two.moveTo(two.getX() + cont.getX(),
+                   two.getY() + cont.getY());
 
         three.setBackgroundColor(Color.WHITE);
-        three.moveTo(three.getX() + cont.getX(), three.getY() + cont.getY());
+        three.moveTo(three.getX() + cont.getX(),
+                     three.getY() + cont.getY());
 
         four.setBackgroundColor(Color.WHITE);
-        four.moveTo(four.getX() + cont.getX(), four.getY() + cont.getY());
+        four.moveTo(four.getX() + cont.getX(),
+                    four.getY() + cont.getY());
 
         songTitle.setBackgroundColor(Color.WHITE);
         songTitle.setX(centerWidth - (songTitle.getWidth() / 2));
