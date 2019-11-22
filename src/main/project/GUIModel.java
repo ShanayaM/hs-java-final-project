@@ -6,13 +6,12 @@
 package project;
 
 import java.util.List;
-import project.GUIInterface;
 
 /**
  *
  *
  */
-public class GUIModel {
+public final class GUIModel {
     protected List model;
     protected GUIInterface view;
     
