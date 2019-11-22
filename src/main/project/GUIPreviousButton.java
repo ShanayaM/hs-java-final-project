@@ -12,9 +12,11 @@ import java.util.List;
 /**
  *
  */
-public final class GUIPreviousButton extends GUIModel implements Command {
+public final class GUIPreviousButton
+    extends GUIModel implements Command {
 
-    public GUIPreviousButton(final List model, final GUIInterface view) {
+    public GUIPreviousButton(final List model,
+                             final GUIInterface view) {
         super(model, view);
     }
 
@@ -25,7 +27,8 @@ public final class GUIPreviousButton extends GUIModel implements Command {
             if (currentIndex - 17 >= 0) {
                 view.getNextButton().enable();
                 view.getPreviousButton().enable();
-                view.updateModel(model, currentIndex - 17, view.getCurrentType());
+                view.updateModel(model, currentIndex - 17,
+                                 view.getCurrentType());
             }
         }
     }
