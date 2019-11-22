@@ -6,5 +6,5 @@
 
 <suppressions>
     <suppress message="Missing package-info.java file."/>
-    <suppress checks="MagicNumber">
+    <suppress checks="MagicNumber"/>
 </suppressions>
