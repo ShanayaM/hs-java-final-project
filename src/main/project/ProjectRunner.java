@@ -4,15 +4,12 @@
  * and open the template in the editor.
  */
 package project;
-import project.*;
+
 import java.util.List;
-import project.MusicSurveyReader;
-import project.GUIWindow;
-import project.GUIFunction;
 /**
  *
  */
-public class ProjectRunner {
+public final class ProjectRunner {
 
     /**
      * @param args the command line arguments
@@ -24,10 +21,10 @@ public class ProjectRunner {
 
         //tally the survey results with song list to create the song survey model
         //loop through the 300+ surveys
-        for(int i=0;i<musicSurveyList.size();i++){
+        for (int i = 0; i < musicSurveyList.size(); i++) {
 
             //the survey has a list of songs that we asked 1 student about
-            MusicSurveyInterface survey = (MusicSurveyInterface)musicSurveyList.get(i);
+            MusicSurveyInterface survey = (MusicSurveyInterface) musicSurveyList.get(i);
             String hobby = survey.getHobby();
             String major = survey.getMajor();
             String region = survey.getRegion();
@@ -35,7 +32,7 @@ public class ProjectRunner {
             //get the questions
             List questions = survey.getSongQuestions();
             //loop through the 70+ survey song questions and update the resutls into the songs
-            for(int j=0;j<questions.size();j++){
+            for (int j = 0; j < questions.size(); j++) {
                 //get the specific song question
                 SongQuestionInterface question = (SongQuestionInterface)questions.get(j);
                 boolean heard = question.getHaveYouHeardTheSong().equals("Yes");
@@ -43,24 +40,24 @@ public class ProjectRunner {
                 SongInterface songInQuestion = (SongInterface)question.getSong();
 
                 //find the song in our master list
-                for(int k=0;k<songList.size();k++){
-                    SongInterface song = (SongInterface)songList.get(k);
+                for (int k=0; k < songList.size(); k++) {
+                    SongInterface song = (SongInterface) songList.get(k);
                     //once we find the song
-                    if(song.equals(songInQuestion)){
-                        if(heard){
+                    if (song.equals(songInQuestion)) {
+                        if (heard) {
                             song.increment("Heard");
                         }
-                        if(likes){
+                        if (likes) {
                             song.increment("Likes");
                         }
                         //Heard it
-                        if(heard){
+                        if (heard) {
                             song.increment(hobby+"Heard");
                             song.increment(major+"Heard");
                             song.increment(region+"Heard");
                         }
                         //Heard and liked
-                        if(heard && likes){
+                        if (heard && likes) {
                             song.increment(hobby+"Likes");
                             song.increment(major+"Likes");
                             song.increment(region+"Likes");
@@ -81,5 +78,4 @@ public class ProjectRunner {
         //controller keeps the model and view separate
         GUIFunction controller = new GUIFunction(model, view);
     }
-
 }
