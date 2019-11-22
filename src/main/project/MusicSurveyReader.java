@@ -13,16 +13,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import project.MusicSurveyInterface;
-import project.SongInterface;
-import project.SongQuestionInterface;
-
 /**
  *
  * 
  */
-public class MusicSurveyReader {
-
-    public static List getMusicSurveyList(List songList) {
+public final class MusicSurveyReader {
+    public static List getMusicSurveyList(final List songList) {
         String csvFile = System.getProperty("user.dir") + File.separator
             + "MusicSurveyData2018.csv";
         System.out.println("csvFile = " + csvFile);
@@ -32,7 +28,6 @@ public class MusicSurveyReader {
         String line = "";
         String cvsSplitBy = ",";
         try {
-
             br = new BufferedReader(new FileReader(csvFile));
 
             // skip first line
