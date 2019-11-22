@@ -33,12 +33,14 @@ public final class GUIGlyph implements GUIMiniGraph {
         titleLabel.setText(song.getTitle());
         titleLabel.setBackgroundColor(Color.WHITE);
         titleLabel.setX(centerWidth - (titleLabel.getWidth() / 2));
-        titleLabel.moveTo(titleLabel.getX() + container.getX(), titleLabel.getY() + container.getY());
+        titleLabel.moveTo(titleLabel.getX() + container.getX(),
+                          titleLabel.getY() + container.getY());
 
         artistLabel.setText("by " + song.getArtist());
         artistLabel.setBackgroundColor(Color.WHITE);
         artistLabel.setX(centerWidth - (artistLabel.getWidth()/2));
-        artistLabel.moveTo(artistLabel.getX()+container.getX(), artistLabel.getY()+container.getY());
+        artistLabel.moveTo(artistLabel.getX() + container.getX(),
+                           artistLabel.getY() + container.getY());
 
         int onePercentYes = 0;
         int twoPercentYes = 0;
@@ -65,11 +67,14 @@ public final class GUIGlyph implements GUIMiniGraph {
 
             int musicHeard = song.getTotal("musicHeard");
             int musicLikes = song.getTotal("musicLikes");
-            fourPercentYes = getPercentYes(musicHeard, musicLikes);
+            fourPercentYes = getPercentYes(musicHeard,
+                                           musicLikes);
             four = new Shape(0, 75, fourPercentYes, 10, Color.GREEN);
         }else if(SurveyEnum.MAJOR.equals(type)){
-            int computerScienceHeard = song.getTotal("Computer ScienceHeard");
-            int computerScienceLikes = song.getTotal("Computer ScienceLikes");
+            int computerScienceHeard = song.getTotal("Computer"
+                                                     + "ScienceHeard");
+            int computerScienceLikes = song.getTotal("Computer"
+                                                     + "ScienceLikes");
             onePercentYes = getPercentYes(computerScienceHeard,
                                           computerScienceLikes);
             one = new Shape(0, 45, onePercentYes, 10, Color.MAGENTA);
@@ -105,9 +110,12 @@ public final class GUIGlyph implements GUIMiniGraph {
                                           southeastLikes);
             two = new Shape(0, 55, twoPercentYes, 10, Color.BLUE);
 
-            int unitedStatesOtherThanSoutheastOrNorthwestHeard = song.getTotal("United States (other than Southeast or Northwest)Heard");
-            int unitedStatesOtherThanSoutheastOrNorthwestLikes = song.getTotal("United States (other than Southeast or Northwest)Likes");
-            threePercentYes = getPercentYes(unitedStatesOtherThanSoutheastOrNorthwestHeard, unitedStatesOtherThanSoutheastOrNorthwestLikes);
+            int unitedStatesOtherThanSoutheastOrNorthwestHeard = song
+                .getTotal("United States (other than Southeast or Northwest) Heard");
+            int unitedStatesOtherThanSoutheastOrNorthwestLikes = song
+                .getTotal("United States (other than Southeast or Northwest) Likes");
+            threePercentYes = getPercentYes(unitedStatesOtherThanSoutheastOrNorthwestHeard,
+                                            unitedStatesOtherThanSoutheastOrNorthwestLikes);
             three = new Shape(0, 65, threePercentYes, 10, Color.ORANGE);
 
             int outsideOfUnitedStatesHeard = song.getTotal("Outside of"
@@ -125,14 +133,19 @@ public final class GUIGlyph implements GUIMiniGraph {
         boolean threeMorePeopleLikedSoMoveRight = threePercentYes > 50;
         boolean fourMorePeopleLikedSoMoveRight = fourPercentYes > 50;
 
-        float onePercentYesPercentYes = (float) onePercentYes * ((float) onePercentYes * (float) .01);
-        float twoPercentYesPercentYes = (float) twoPercentYes * ((float) twoPercentYes * (float) .01);
-        float threePercentYesPercentYes = (float) threePercentYes * ((float) threePercentYes * (float) .01);
-        float fourPercentYesPercentYes = (float) fourPercentYes * ((float) fourPercentYes * (float) .01);
+        float onePercentYesPercentYes = (float) onePercentYes
+            * ((float) onePercentYes * (float) .01);
+        float twoPercentYesPercentYes = (float) twoPercentYes
+            * ((float) twoPercentYes * (float) .01);
+        float threePercentYesPercentYes = (float) threePercentYes
+            * ((float) threePercentYes * (float) .01);
+        float fourPercentYesPercentYes = (float) fourPercentYes
+            * ((float) fourPercentYes * (float) .01);
 
 
         one.setX(centerWidth - (one.getWidth() / 2));
-        one.moveTo(one.getX() + container.getX(), one.getY() + container.getY());
+        one.moveTo(one.getX() + container.getX(), one.getY()
+                   + container.getY());
         //divive by 2 since we're centered
         int oneAmountToMove = (int) onePercentYesPercentYes / 2;
         if (oneMorePeopleLikedSoMoveRight){
@@ -142,7 +155,8 @@ public final class GUIGlyph implements GUIMiniGraph {
         }
 
         two.setX(centerWidth - (two.getWidth() / 2));
-        two.moveTo(two.getX() + container.getX(), two.getY() + container.getY());
+        two.moveTo(two.getX() + container.getX(), two.getY()
+                   + container.getY());
         //divive by 2 since we're centered
         int twoAmountToMove = (int) twoPercentYesPercentYes / 2;
         if (twoMorePeopleLikedSoMoveRight) {
@@ -152,7 +166,8 @@ public final class GUIGlyph implements GUIMiniGraph {
         }
 
         three.setX(centerWidth - (three.getWidth()/2));
-        three.moveTo(three.getX() + container.getX(), three.getY() + container.getY());
+        three.moveTo(three.getX() + container.getX(), three.getY()
+                     + container.getY());
         //divive by 2 since we're centered
         int threeAmountToMove = (int) threePercentYesPercentYes / 2;
         if (threeMorePeopleLikedSoMoveRight) {
@@ -173,11 +188,12 @@ public final class GUIGlyph implements GUIMiniGraph {
         }
 
         hl.setX(centerWidth - (hl.getWidth() / 2));
-        hl.moveTo(hl.getX() + container.getX(), hl.getY() + container.getY());
+        hl.moveTo(hl.getX() + container.getX(), hl.getY()
+                  + container.getY());
     }
 
     public int getPercentYes(final int heard, final int likes){
-        return likes * 100/ heard;
+        return likes * 100 / heard;
     }
 
     @Override
