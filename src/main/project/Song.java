@@ -2,9 +2,8 @@ package project;
 
 import java.util.HashMap;
 import java.util.Map;
-import project.SongInterface;
 
-public class Song implements SongInterface{
+public final class Song implements SongInterface {
     private String title;
     private String artist;
     private String year;
@@ -19,11 +18,11 @@ public class Song implements SongInterface{
     }
 
     /**
-     * @param title the title to set
+     * @param t the title to set
      */
     @Override
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitle(final String t) {
+        this.title = t;
     }
 
     /**
@@ -35,11 +34,11 @@ public class Song implements SongInterface{
     }
 
     /**
-     * @param artist the artist to set
+     * @param art the artist to set
      */
     @Override
-    public void setArtist(String artist) {
-        this.artist = artist;
+    public void setArtist(final String art) {
+        this.artist = art;
     }
 
     /**
@@ -51,11 +50,11 @@ public class Song implements SongInterface{
     }
 
     /**
-     * @param year the year to set
+     * @param y the year to set
      */
     @Override
-    public void setYear(String year) {
-        this.year = year;
+    public void setYear(final String y) {
+        this.year = y;
     }
 
     /**
@@ -67,36 +66,37 @@ public class Song implements SongInterface{
     }
 
     /**
-     * @param genre the genre to set
+     * @param g the genre to set
      */
     @Override
-    public void setGenre(String genre) {
-        this.genre = genre;
+    public void setGenre(final String g) {
+        this.genre = g;
     }
     
     private final Map totals = new HashMap();
+    
     @Override
-    public void increment(String key){
-        if(totals.containsKey(key)){
+    public void increment(final String key) {
+        if (totals.containsKey(key)) {
             int count = Integer.parseInt(String.valueOf(totals.get(key)));
             count = count + 1;
             totals.put(key, count);
-        }else{
+        } else {
             totals.put(key, 1);
         }
     }
     
     @Override
-    public int getTotal(String key){
+    public int getTotal(final String key) {
         int total = 0;
-        if(totals.containsKey(key)){
+        if (totals.containsKey(key)) {
             total = Integer.parseInt(String.valueOf(totals.get(key)));
         }
         return total;
     }
     
     @Override
-    public String toString(){
+    public String toString() {
         String br = "\n";
         StringBuilder sb = new StringBuilder();
         sb.append("Title : ").append(this.getTitle()).append(br);
