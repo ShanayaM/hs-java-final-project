@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project;
+package test;
 
 import project.SongInterface;
 import org.junit.Before;
@@ -12,11 +12,11 @@ import org.junit.Before;
  *
  * 
  */
-public class SongTest extends student.TestCase {
+public class SongTest {
 
     private SongInterface song;
 
-
+    @Before
     public void setUp() {
         song = new Song();
         song.setArtist("Rick Ross");
@@ -30,6 +30,7 @@ public class SongTest extends student.TestCase {
      * Test of getTitle method, of class Song.
      */
 
+    @Test
     public void testGetTitle() {
         System.out.println("getTitle");
         String expResult = "Dead Presidents";
@@ -42,6 +43,7 @@ public class SongTest extends student.TestCase {
      * Test of setTitle method, of class Song.
      */
 
+    @Test
     public void testSetTitle() {
         System.out.println("setTitle");
         String title = "This Love";
@@ -54,6 +56,7 @@ public class SongTest extends student.TestCase {
      * Test of getArtist method, of class Song.
      */
 
+    @Test
     public void testGetArtist() {
         System.out.println("getArtist");
         String expResult = "Rick Ross";
@@ -66,6 +69,7 @@ public class SongTest extends student.TestCase {
      * Test of setArtist method, of class Song.
      */
 
+    @Test
     public void testSetArtist() {
         System.out.println("setArtist");
         String artist = "Pantera";
@@ -79,6 +83,7 @@ public class SongTest extends student.TestCase {
      * Test of getYear method, of class Song.
      */
 
+    @Test
     public void testGetYear() {
         System.out.println("getYear");
         String expResult = "2017";
@@ -91,6 +96,7 @@ public class SongTest extends student.TestCase {
      * Test of setYear method, of class Song.
      */
 
+    @Test
     public void testSetYear() {
         System.out.println("setYear");
         String year = "1992";
@@ -103,6 +109,7 @@ public class SongTest extends student.TestCase {
      * Test of getGenre method, of class Song.
      */
 
+    @Test
     public void testGetGenre() {
         System.out.println("getGenre");
         String expResult = "Rap";
@@ -115,6 +122,7 @@ public class SongTest extends student.TestCase {
      * Test of setGenre method, of class Song.
      */
 
+    @Test
     public void testSetGenre() {
         System.out.println("setGenre");
         String genre = "Metal";
@@ -126,7 +134,8 @@ public class SongTest extends student.TestCase {
     /**
      * Test of increment method, of class Song.
      */
-    
+
+    @Test
     public void testIncrement() {
         song.increment("readingHeard");
         song.increment("readingHeard");
@@ -140,7 +149,8 @@ public class SongTest extends student.TestCase {
     /**
      * Test of getTotal method, of class Song.
      */
-    
+
+    @Test
     public void testGetTotal() {
         System.out.println("getTotal");
         int expected = 0;
@@ -152,7 +162,7 @@ public class SongTest extends student.TestCase {
     /**
      * Test of toString method, of class Song.
      */
-    
+    @Test
     public void testToString() {
         System.out.println("toString");
         song.increment("readingHeard");
