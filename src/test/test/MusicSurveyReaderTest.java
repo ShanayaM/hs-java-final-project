@@ -3,25 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project;
+package test;
 
 import java.util.List;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertEquals;
 
 /**
  *
  * 
  */
-public class MusicSurveyReaderTest extends student.TestCase {
+public class MusicSurveyReaderTest {
 
     /**
      * Test of getMusicSurveyList method, of class MusicSurveyETL.
      */
+    @Test
     public void testGetMusicSurveyList() {
         System.out.println("getMusicSurveyList");
-        List result = MusicSurveyReader.getMusicSurveyList(SongReader.getSongList());
+        List result = MusicSurveyReader
+                .getMusicSurveyList(SongReader.getSongList());
         assertNotNull(result);
         assertEquals(result.size(), 325);
     }
-
 }
