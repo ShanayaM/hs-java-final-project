@@ -12,43 +12,19 @@ import java.util.List;
  * 
  */
 public interface MusicSurveyInterface {
-    public enum SurveyEnum {
+    enum SurveyEnum {
         HOBBY, MAJOR, REGION;
     }
-
-
-    public String getPersonId();
-
-
-    public void setPersonId(String personId);
-
-
-    public String getDateOfSurvey();
-
-
-    public void setDateOfSurvey(String dateOfSurvey);
-
-
-    public String getMajor();
-
-
-    public void setMajor(String major);
-
-
-    public String getRegion();
-
-
-    public void setRegion(String region);
-
-
-    public String getHobby();
-
-
-    public void setHobby(String hobby);
-
-
-    public List getSongQuestions();
-
-
-    public void setSongQuestions(List songQuestions);
+    String getPersonId();
+    void setPersonId(String personId);
+    String getDateOfSurvey();
+    void setDateOfSurvey(String dateOfSurvey);
+    String getMajor();
+    void setMajor(String major);
+    String getRegion();
+    void setRegion(String region);
+    String getHobby();
+    void setHobby(String hobby);
+    List getSongQuestions();
+    void setSongQuestions(List songQuestions);
 }
