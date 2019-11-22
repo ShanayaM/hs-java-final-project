@@ -8,25 +8,24 @@ package project;
 import CS2114.Command;
 import CS2114.Widget;
 import java.util.List;
-import project.GUIInterface;
 
 /**
  *
  */
-public class GUIPreviousButton extends GUIModel implements Command{
+public class GUIPreviousButton extends GUIModel implements Command {
 
-    public GUIPreviousButton(List model, GUIInterface view) {
+    public GUIPreviousButton(final List model, final GUIInterface view) {
         super(model, view);
     }
 
     @Override
     public void execute(Widget widget) {
         int currentIndex = view.getPaginationIndex();
-        if(currentIndex > 8){
-            if(currentIndex-17 >= 0){
+        if(currentIndex > 8) {
+            if (currentIndex - 17 >= 0) {
                 view.getNextButton().enable();
                 view.getPreviousButton().enable();
-                view.updateModel(model, currentIndex-17, view.getCurrentType());
+                view.updateModel(model, currentIndex - 17, view.getCurrentType());
             }
         }
     }
