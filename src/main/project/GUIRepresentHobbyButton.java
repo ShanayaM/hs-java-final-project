@@ -13,7 +13,7 @@ import java.util.List;
 /**
  *
  */
-public class GUIRepresentHobyyButton extends GUIModel implements Command {
+public final class GUIRepresentHobyyButton extends GUIModel implements Command {
 
     public GUIRepresentHobyyButton(final List model, final GUIInterface view) {
         super(model, view);
