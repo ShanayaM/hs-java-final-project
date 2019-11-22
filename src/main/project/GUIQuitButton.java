@@ -12,14 +12,16 @@ import java.util.List;
 /**
  *
  */
-public final class GUIQuitButton extends GUIModel implements Command {
+public final class GUIQuitButton
+    extends GUIModel implements Command {
 
-    public GUIQuitButton(final List model, final GUIInterface view) {
+    public GUIQuitButton(final List model,
+                         final GUIInterface view) {
         super(model, view);
     }
 
     @Override
-    public void execute(Widget widget) {
+    public void execute(final Widget widget) {
         System.exit(0);
     }
 }
