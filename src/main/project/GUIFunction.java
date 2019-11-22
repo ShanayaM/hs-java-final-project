@@ -14,7 +14,7 @@ import project.GUIInterface;
  *
  */
 public class GUIFunction {
-    public GUIFunction(List model, GUIInterface view){
+    public GUIFunction(final List model, final GUIInterface view){
         //Controller keeps model and view separate from each other.
 
         //Update the view with the model
