@@ -10,20 +10,10 @@ package project;
  *
  */
 public interface SongQuestionInterface {
-    public SongInterface getSong();
-
-
-    public void setSong(SongInterface song);
-
-
-    public String getHaveYouHeardTheSong();
-
-
-    public void setHaveYouHeardTheSong(String answer);
-
-
-    public String getDoYouLikeTheSong();
-
-
-    public void setDoYouLikeTheSong(String answer);
+    SongInterface getSong();
+    void setSong(SongInterface song);
+    String getHaveYouHeardTheSong();
+    void setHaveYouHeardTheSong(String answer);
+    String getDoYouLikeTheSong();
+    void setDoYouLikeTheSong(String answer);
 }
