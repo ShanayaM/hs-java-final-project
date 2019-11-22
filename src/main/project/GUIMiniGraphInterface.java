@@ -14,5 +14,5 @@ import CS2114.Shape;
  *
  */
 interface GUIMiniGraph {
-    public Shape[] getGlyph();
+    Shape[] getGlyph();
 }
