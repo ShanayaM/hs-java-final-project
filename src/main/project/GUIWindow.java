@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project.gui;
+package gui;
 
 import project.GUIInterface;
 import CS2114.Button;
@@ -18,15 +18,13 @@ import project.SongInterface;
 /**
  *
  */
-public class GUIWindow implements GUIInterface {
-
-
-    private final Button previousButton = new Button("<- Prev");
+public final class GUIWindow implements GUIInterface {
+    private final Button previousButton = new Button("<-- Prev");
     private final Button sortByArtistNameButton = new Button("Sort by Artist Name");
     private final Button sortBySongTitleButton = new Button("Sort by Song Title");
     private final Button sortByReleaseYearButton = new Button("Sort by Release Year");
     private final Button sortByGenreButton = new Button("Sort by Genre");
-    private final Button nextButton = new Button("Next ->");
+    private final Button nextButton = new Button("Next -->");
 
     private final int width = 236;
     private final int height = 96;
@@ -56,12 +54,14 @@ public class GUIWindow implements GUIInterface {
     private final Button representMajorButton = new Button("Represent Major");
     private final Button representRegionButton = new Button("Represent Region");
     private final Button quitButton = new Button("Quit");
-
-
-    final Window w = new Window("Parshad Barot");
+    
+   //index used for pagination
+    private int paginationIndex;
+    private SurveyEnum currentType;
+    
+    final Window w = new Window("Project");
 
     public GUIWindow() {
-
         int windowWidth = 843;
         int windowHeight = 400;
 
@@ -90,70 +90,65 @@ public class GUIWindow implements GUIInterface {
 //        w.moveToFront(securityGlass);
     }
 
-    //index used for pagination
-    private int paginationIndex;
-
     //pagination has to do with view not model
     @Override
-    public int getPaginationIndex(){
+    public int getPaginationIndex() {
         return paginationIndex;
     }
 
-    private SurveyEnum currentType;
     @Override
-    public SurveyEnum getCurrentType(){
+    public SurveyEnum getCurrentType() {
         return currentType;
     }
 
     @Override
-    public void updateModel(List model, int index, SurveyEnum type){
+    public void updateModel(final List model, final int index, final SurveyEnum type) {
         w.removeAllShapes();
 
         currentType = type;
 
-        if(model!=null && !model.isEmpty()){
+        if (model!=null && !model.isEmpty()) {
             int size = model.size();
-            if(index < size){
+            if (index < size) {
                 this.paginationIndex = index;
-                addGlyph(w, new GUIGlyph(topLeft, (SongInterface)model.get(index), type));
+                addGlyph(w, new GUIGlyph(topLeft, (SongInterface) model.get(index), type));
             }
-            if(index + 1 < size){
+            if (index + 1 < size) {
                 this.paginationIndex = index + 1;
-                addGlyph(w, new GUIGlyph(topCenter, (SongInterface)model.get(index+1), type));
+                addGlyph(w, new GUIGlyph(topCenter, (SongInterface) model.get(index + 1), type));
             }
-            if(index + 2 < size){
+            if(index + 2 < size) {
                 this.paginationIndex = index + 2;
-                addGlyph(w, new GUIGlyph(topRight, (SongInterface)model.get(index+2), type));
+                addGlyph(w, new GUIGlyph(topRight, (SongInterface) model.get(index + 2), type));
             }
-
-            if(index + 3 < size){
+            if (index + 3 < size) {
                 this.paginationIndex = index + 3;
-                addGlyph(w, new GUIGlyph(centerLeft, (SongInterface)model.get(index+3), type));
+                addGlyph(w, new GUIGlyph(centerLeft, (SongInterface) model.get(index + 3), type));
             }
-            if(index + 4 < size){
+            if (index + 4 < size) {
                 this.paginationIndex = index + 4;
-                addGlyph(w, new GUIGlyph(centerCenter, (SongInterface)model.get(index+4), type));
+                addGlyph(w, new GUIGlyph(centerCenter, (SongInterface) model.get(index + 4), type));
             }
-            if(index + 5 < size){
+            if (index + 5 < size) {
                 this.paginationIndex = index + 5;
-                addGlyph(w, new GUIGlyph(centerRight, (SongInterface)model.get(index+5), type));
+                addGlyph(w, new GUIGlyph(centerRight, (SongInterface) model.get(index + 5), type));
             }
 
-            if(index + 6 < size){
+            if (index + 6 < size) {
                 this.paginationIndex = index + 6;
-                addGlyph(w, new GUIGlyph(bottomLeft, (SongInterface)model.get(index+6), type));
+                addGlyph(w, new GUIGlyph(bottomLeft, (SongInterface) model.get(index + 6), type));
             }
-            if(index + 7 < size){
+            if (index + 7 < size) {
                 this.paginationIndex = index + 7;
-                addGlyph(w, new GUIGlyph(bottomCenter, (SongInterface)model.get(index+7), type));
+                addGlyph(w, new GUIGlyph(bottomCenter, (SongInterface) model.get(index + 7), type));
             }
-            if(index + 8 < size){
+            if (index + 8 < size) {
                 this.paginationIndex = index + 8;
-                addGlyph(w, new GUIGlyph(bottomRight, (SongInterface)model.get(index+8), type));
+                addGlyph(w, new GUIGlyph(bottomRight, (SongInterface) model.get(index + 8), type));
             }
         }
 
-        addGlyph(w, new GUILegend(legendBg, (SongInterface)model.get(index), type));
+        addGlyph(w, new GUILegend(legendBg, (SongInterface) model.get(index), type));
         w.addShape(legendFg);
         w.addShape(legendBg);
     }
@@ -244,11 +239,4 @@ public class GUIWindow implements GUIInterface {
     public Button getQuitButton() {
         return quitButton;
     }
-
-
-
-//    public static void main(String[] args) {
-//        new View();
-//    }
-
 }
