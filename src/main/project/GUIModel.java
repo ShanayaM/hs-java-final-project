@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * 
+ * GUI Model class to instantiate the gui
+ * 
  */
 package project;
 
@@ -12,11 +12,12 @@ import project.GUIInterface;
  *
  *
  */
-public class GUIModel{
+public class GUIModel {
     protected List model;
     protected GUIInterface view;
-    public GUIModel(List model, GUIInterface view){
-        this.model = model;
-        this.view = view;
+    
+    public GUIModel(final List m, final GUIInterface v) {
+        this.model = m;
+        this.view = v;
     }
 }
