@@ -3,7 +3,7 @@
  * Glyph GUI
  * 
  */
-package gui.project;
+package project.gui;
 
 import CS2114.Shape;
 import CS2114.TextShape;
