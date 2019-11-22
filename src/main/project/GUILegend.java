@@ -15,7 +15,7 @@ import project.SongInterface;
  *
  *
  */
-public class GUILegend implements GUIMiniGraph{
+public final class GUILegend implements GUIMiniGraph {
     private TextShape legend = new TextShape(5, 5, "");
     private TextShape one = new TextShape(5, 25, "", Color.MAGENTA);
     private TextShape two = new TextShape(5, 40, "", Color.BLUE);
@@ -27,28 +27,30 @@ public class GUILegend implements GUIMiniGraph{
     private Shape hl = new Shape(0, 110, 5, 40, Color.BLACK);
     private TextShape likes = new TextShape(65, 120, "Likes");
 
-    public GUILegend(Shape container, SongInterface song, SurveyEnum type){
-        int x = container.getX();
-        int y = container.getY();
-        int width = container.getWidth();
-        int height = container.getHeight();
+    public GUILegend(final Shape cont,
+                     final SongInterface song,
+                     final SurveyEnum type) {
+        int x = cont.getX();
+        int y = cont.getY();
+        int width = cont.getWidth();
+        int height = cont.getHeight();
 
-        int centerWidth = width/2;
-        int centerHeight = height/2;
+        int centerWidth = width / 2;
+        int centerHeight = height / 2;
 
-        if(SurveyEnum.HOBBY.equals(type)){
+        if (SurveyEnum.HOBBY.equals(type)) {
             legend.setText("Hobby Legend");
             one.setText("Read");
             two.setText("Art");
             three.setText("Sports");
             four.setText("Music");
-        }else if(SurveyEnum.MAJOR.equals(type)){
+        } else if (SurveyEnum.MAJOR.equals(type)) {
             legend.setText("Major Legend");
             one.setText("CSCI");
             two.setText("Other Eng");
             three.setText("Math or CMDA");
             four.setText("Other");
-        }else if(SurveyEnum.REGION.equals(type)){
+        } else if (SurveyEnum.REGION.equals(type)) {
             legend.setText("Region Legend");
             one.setText("Northeast");
             two.setText("Southeast");
@@ -57,37 +59,40 @@ public class GUILegend implements GUIMiniGraph{
         }
 
         legend.setBackgroundColor(Color.WHITE);
-        legend.moveTo(legend.getX()+container.getX(), legend.getY()+container.getY());
+        legend.moveTo(legend.getX() + cont.getX(), legend.getY() + cont.getY());
 
         one.setBackgroundColor(Color.WHITE);
-        one.moveTo(one.getX()+container.getX(), one.getY()+container.getY());
+        one.moveTo(one.getX() + cont.getX(), one.getY() + cont.getY());
 
         two.setBackgroundColor(Color.WHITE);
-        two.moveTo(two.getX()+container.getX(), two.getY()+container.getY());
+        two.moveTo(two.getX() + cont.getX(), two.getY() + cont.getY());
 
         three.setBackgroundColor(Color.WHITE);
-        three.moveTo(three.getX()+container.getX(), three.getY()+container.getY());
+        three.moveTo(three.getX() + cont.getX(), three.getY() + cont.getY());
 
         four.setBackgroundColor(Color.WHITE);
-        four.moveTo(four.getX()+container.getX(), four.getY()+container.getY());
+        four.moveTo(four.getX() + cont.getX(), four.getY() + cont.getY());
 
         songTitle.setBackgroundColor(Color.WHITE);
-        songTitle.setX(centerWidth - (songTitle.getWidth()/2));
-        songTitle.moveTo(songTitle.getX()+container.getX(), songTitle.getY()+container.getY());
+        songTitle.setX(centerWidth - (songTitle.getWidth() / 2));
+        songTitle.moveTo(songTitle.getX() + cont.getX(),
+                songTitle.getY() + cont.getY());
 
         heard.setBackgroundColor(Color.WHITE);
-        heard.moveTo(heard.getX()+container.getX(), heard.getY()+container.getY());
+        heard.moveTo(heard.getX() + cont.getX(),
+                heard.getY() + cont.getY());
 
-        hl.setX(centerWidth - (hl.getWidth()/2));
-        hl.moveTo(hl.getX()+container.getX(), hl.getY()+container.getY());
+        hl.setX(centerWidth - (hl.getWidth() / 2));
+        hl.moveTo(hl.getX() + cont.getX(),
+                hl.getY() + cont.getY());
 
         likes.setBackgroundColor(Color.WHITE);
-        likes.moveTo(likes.getX()+container.getX(), likes.getY()+container.getY());
-
+        likes.moveTo(likes.getX() + cont.getX(),
+                likes.getY() + cont.getY());
     }
 
-    public Shape[] getGlyph(){
-        Shape [] shapes = new Shape[9];
+    public Shape[] getGlyph() {
+        Shape[] shapes = new Shape[9];
         shapes[0] = legend;
         shapes[1] = one;
         shapes[2] = two;
@@ -99,5 +104,4 @@ public class GUILegend implements GUIMiniGraph{
         shapes[8] = likes;
 
         return shapes;
-    }
-}
+    }}
