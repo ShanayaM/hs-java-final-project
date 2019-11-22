@@ -13,14 +13,16 @@ import java.util.List;
  *
  *
  */
-public class GUINextButton extends GUIModel implements Command {
+public final class GUINextButton
+    extends GUIModel implements Command {
 
-    public GUINextButton(final List model, final GUIInterface view) {
+    public GUINextButton(final List model,
+                         final GUIInterface view) {
         super(model, view);
     }
 
     @Override
-    public void execute(Widget widget) {
+    public void execute(final Widget widget) {
         int currentIndex = view.getPaginationIndex();
         int nextIndex = currentIndex + 1;
         if (nextIndex < model.size()) {
