@@ -16,12 +16,14 @@ import java.util.List;
 public final class GUIRepresentHobyyButton
     extends GUIModel implements Command {
 
-    public GUIRepresentHobyyButton(final List model, final GUIInterface view) {
+    public GUIRepresentHobyyButton(final List model,
+                                   final GUIInterface view) {
         super(model, view);
     }
 
     @Override
     public void execute(final Widget widget) {
-        view.updateModel(model, view.getPaginationIndex() - 8, SurveyEnum.HOBBY);
+        view.updateModel(model, view.getPaginationIndex() - 8,
+                         SurveyEnum.HOBBY);
     }
 }
