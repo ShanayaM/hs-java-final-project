@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * 
+ * SongReader class reads the csv file and sets the song 
+ * parameters for to be displayed.
  */
 package project;
 
@@ -12,7 +12,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import project.SongInterface;
 
 /**
  *
@@ -71,7 +70,7 @@ public class SongReader {
 
 
     // A filter to remove help us skip first row of csv file
-    public static boolean isValid(String data) {
+    public static boolean isValid(final String data) {
         boolean isValid = true;
         if ("Song Title".equals(data)) {
             isValid = false;
