@@ -25,12 +25,12 @@ public class MusicSurvey implements MusicSurveyInterface {
 
 
     /**
-     * @param personId
+     * @param id
      *            the personId to set
      */
     @Override
-    public void setPersonId(String personId) {
-        this.personId = personId;
+    public void setPersonId(final String id) {
+        this.personId = id;
     }
 
 
@@ -44,12 +44,12 @@ public class MusicSurvey implements MusicSurveyInterface {
 
 
     /**
-     * @param dateOfSurvey
+     * @param dos
      *            the dateOfSurvey to set
      */
     @Override
-    public void setDateOfSurvey(String dateOfSurvey) {
-        this.dateOfSurvey = dateOfSurvey;
+    public void setDateOfSurvey(final String dos) {
+        this.dateOfSurvey = dos;
     }
 
 
@@ -63,12 +63,12 @@ public class MusicSurvey implements MusicSurveyInterface {
 
 
     /**
-     * @param major
+     * @param m
      *            the major to set
      */
     @Override
-    public void setMajor(String major) {
-        this.major = major;
+    public void setMajor(final String m) {
+        this.major = m;
     }
 
 
@@ -82,12 +82,12 @@ public class MusicSurvey implements MusicSurveyInterface {
 
 
     /**
-     * @param region
+     * @param r
      *            the region to set
      */
     @Override
-    public void setRegion(String region) {
-        this.region = region;
+    public void setRegion(final String r) {
+        this.region = r;
     }
 
 
@@ -99,14 +99,13 @@ public class MusicSurvey implements MusicSurveyInterface {
         return hobby;
     }
 
-
     /**
-     * @param hobby
+     * @param hob
      *            the hobby to set
      */
     @Override
-    public void setHobby(String hobby) {
-        this.hobby = hobby;
+    public void setHobby(final String hob) {
+        this.hobby = hob;
     }
 
 
@@ -120,12 +119,12 @@ public class MusicSurvey implements MusicSurveyInterface {
 
 
     /**
-     * @param songQuestions
+     * @param questions
      *            the songQuestions to set
      */
     @Override
-    public void setSongQuestions(List songQuestions) {
-        this.songQuestions = songQuestions;
+    public void setSongQuestions(final List questions) {
+        this.songQuestions = questions;
     }
 
     private String personId;
