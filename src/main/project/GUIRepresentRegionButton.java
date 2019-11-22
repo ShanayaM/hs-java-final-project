@@ -9,19 +9,20 @@ import CS2114.Command;
 import CS2114.Widget;
 import project.MusicSurveyInterface.SurveyEnum;
 import java.util.List;
-import project.GUIInterface;
 
 /**
  *
  */
-public class GUIRepresentRegionButton extends GUIModel implements Command{
+public final class GUIRepresentRegionButton extends GUIModel implements Command {
 
-    public GUIRepresentRegionButton(List model, GUIInterface view) {
+    public GUIRepresentRegionButton(final List model,
+                                    final GUIInterface view) {
         super(model, view);
     }
 
     @Override
-    public void execute(Widget widget) {
-        view.updateModel(model, view.getPaginationIndex()-8, SurveyEnum.REGION);
+    public void execute(final Widget widget) {
+        view.updateModel(model, view.getPaginationIndex() - 8,
+                         SurveyEnum.REGION);
     }
 }
